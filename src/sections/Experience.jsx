@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot, Paper, Typography, Box, Chip } from '@mui/lab';
+import { Container, Paper, Typography, Box, Chip } from '@mui/material';
+import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot } from '@mui/lab';
 import { Work } from '@mui/icons-material';
 import { experience } from '../data/experience';
 import SectionHeader from '../components/UI/SectionHeader';
