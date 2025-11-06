@@ -15,6 +15,6 @@ export const profile = {
     linkedin: "https://www.linkedin.com/in/gollasaisreee",
     github: "https://github.com/GOLLASAISREE"
   },
-  copyright: "© 2025 Golla Sai Sree",
-  tagline: "Open to internships"
+  footerNote: "Open to internships, freelance, full-time roles",
+  copyright: "© 2025 Golla Sai Sree"
 };
