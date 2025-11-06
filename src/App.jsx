@@ -1,38 +1,23 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ThemeProvider } from '@mui/material/styles';
-import { CssBaseline, Box } from '@mui/material';
-import { useThemeMode } from './hooks/useThemeMode';
-import { theme } from './theme/theme';
-import Header from './components/Layout/Header';
-import Footer from './components/Layout/Footer';
-import Home from './pages/Home';
-import ProjectsPage from './pages/ProjectsPage';
-import BlogPage from './pages/BlogPage';
-import BlogPostPage from './pages/BlogPostPage';
+import { CssBaseline, Container, Box, Typography } from '@mui/material';
+import { profile } from './data/profile';
+import Experience from './sections/Experience';
 
-function App() {
-  const { currentTheme, toggleTheme, mode } = useThemeMode();
-
+export default function App() {
   return (
-    <ThemeProvider theme={currentTheme}>
+    <>
       <CssBaseline />
-      <Router>
-        <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-          <Header mode={mode} toggleTheme={toggleTheme} />
-          <Box component="main" sx={{ flexGrow: 1 }}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/projects" element={<ProjectsPage />} />
-              <Route path="/blog" element={<BlogPage />} />
-              <Route path="/blog/:slug" element={<BlogPostPage />} />
-            </Routes>
-          </Box>
-          <Footer />
+      <Container maxWidth="lg">
+        <Box sx={{ py: 4 }}>
+          <Typography variant="h4" component="h1" gutterBottom>
+            {profile.fullName} — {profile.role}
+          </Typography>
+          <Typography variant="subtitle1" gutterBottom>
+            {profile.bio}
+          </Typography>
+          <Experience />
         </Box>
-      </Router>
-    </ThemeProvider>
+      </Container>
+    </>
   );
 }
-
-export default App;
